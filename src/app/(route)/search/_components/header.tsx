@@ -6,10 +6,10 @@ import { useRouter } from "next/navigation";
 const Header = () => {
     const router = useRouter();
     return (
-        <div className="w-full h-16 flex justify-start items-center px-5">
+        <div className="w-full h-16 z-50 flex justify-start items-center pt-2 px-5">
             <div
                 className="cursor-pointer flex items-center"
-                onClick={() => router.back()}
+                onClick={() => router.push("/main")}
             >
                 <Image
                     alt="chevron-left-icon"

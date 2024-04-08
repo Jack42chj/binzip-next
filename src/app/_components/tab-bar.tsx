@@ -13,7 +13,7 @@ const pathList = [
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-[28px] h-[28px]"
             >
                 <path
                     strokeLinecap="round"
@@ -32,7 +32,7 @@ const pathList = [
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-[28px] h-[28px]"
             >
                 <path
                     strokeLinecap="round"
@@ -51,7 +51,7 @@ const pathList = [
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-[28px] h-[28px]"
             >
                 <path
                     strokeLinecap="round"
@@ -70,7 +70,7 @@ const pathList = [
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-[28px] h-[28px]"
             >
                 <path
                     strokeLinecap="round"
@@ -98,16 +98,16 @@ const TabBar = () => {
     };
 
     return (
-        <div className="z-999 w-full opacity-90 fixed bottom-5 flex justify-center rounded-full lg:w-24 lg:h-full lg:bottom-0 lg:left-3 lg:mt-32 lg:flex-col lg:justify-center">
-            <div className="w-full h-20 bg-gray-800 rounded-full mx-5 flex justify-evenly lg:flex-col lg:w-24 lg:h-full lg:mt-32">
+        <div className="z-40 w-full opacity-90 fixed bottom-5 flex justify-center rounded-full lg:w-24 lg:h-full lg:bottom-0 lg:left-2.5 lg:mt-28 lg:flex-col lg:justify-center">
+            <div className="w-full h-16 bg-secondary rounded-full mx-5 flex justify-evenly lg:flex-col lg:w-24 lg:h-full lg:mt-28">
                 {pathList.map((item) => (
                     <div
                         onClick={() => handleTabClick(item.path)}
                         key={item.path}
-                        className={`cursor-pointer flex items-center justify-center gap-2 font-bold text-sm ${
+                        className={`cursor-pointer flex items-center justify-center gap-1.5 ${
                             activeTab === item.path
-                                ? "text-pink-500 border-b-2 border-pink-500 w-6 h-6 lg:border-none lg:border-l-2 lg:border-pink-500 lg:w-7 lg:h-7"
-                                : "text-gray-400"
+                                ? "text-crimson text-[28px] border-b-4 border-crimson lg:border-b-0 lg:border-l-4 lg:border-crimson"
+                                : "text-default border-none"
                         }`}
                     >
                         {item.src}

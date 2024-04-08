@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const list = [
     { name: "액션" },
     { name: "빈센조" },
@@ -16,12 +18,14 @@ const Tag = () => {
     return (
         <div className="w-full flex flex-wrap gap-4 px-5">
             {list.map((item) => (
-                <div
-                    className="cursor-pointer bg-gray-800 rounded-full text-white font-bold py-3 px-4"
-                    key={item.name}
-                >
-                    {item.name}
-                </div>
+                <Link href={`search/${item.name}`}>
+                    <div
+                        className="cursor-pointer font-Pretendard bg-grey rounded-full text-white font-bold py-3 px-4"
+                        key={item.name}
+                    >
+                        {item.name}
+                    </div>
+                </Link>
             ))}
         </div>
     );

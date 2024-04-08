@@ -9,6 +9,6 @@ body {
     background-color: #191a2c;
     font-family: "Pretendard";
 }
-&::-webkit-scrollbar {
+::-webkit-scrollbar {
     display: none;
 }

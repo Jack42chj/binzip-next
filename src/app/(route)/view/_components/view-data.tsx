@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getPopularData } from "@/app/_apis/supabase-api";
+import { getViewData } from "@/app/_apis/supabase-api";
 
-const PopularList = async () => {
-    const list = await getPopularData();
+const MostViewData = async () => {
+    const list = await getViewData();
 
     return (
         <>
             <div className="flex items-center m-5 gap-2">
                 <div className="text-white text-xl font-bold">전체</div>
-                <div className="text-pink-500 text-xl font-bold">
+                <div className="text-crimson text-xl font-bold">
                     {list.length}
                 </div>
             </div>
@@ -24,6 +24,7 @@ const PopularList = async () => {
                                 className="rounded-xl transition-transform duration-350 hover:scale-105"
                                 alt={item.title}
                                 src={item.img}
+                                style={{ width: "162px", height: "231px" }}
                                 width={162}
                                 height={231}
                             />
@@ -35,4 +36,4 @@ const PopularList = async () => {
     );
 };
 
-export default PopularList;
+export default MostViewData;

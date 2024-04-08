@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import SearchBar from "./search-bar";
+import { KeywordProps } from "@/app/_interfaces/keyword-interface";
 
-const Header = () => {
+const ResultHeader = ({ keyword }: KeywordProps) => {
     const router = useRouter();
     const [scrolled, setScrolled] = useState(false);
 
@@ -26,31 +28,22 @@ const Header = () => {
     return (
         <div
             className={`w-full sticky top-0 z-50 flex justify-center ${
-                scrolled ? "bg-primary opacity-90" : "bg-transparent"
+                scrolled ? "bg-primary" : "bg-transparent"
             }`}
         >
             <div className="w-full h-14 flex justify-between items-center px-5 my-2">
-                <div
-                    className="cursor-pointer text-2xl font-bold text-white text-Pretendard"
-                    onClick={() => router.push("/")}
-                >
-                    BinZip
-                </div>
-                <div
-                    className="cursor-pointer"
-                    onClick={() => router.push("/my-page")}
-                >
+                <div className="cursor-pointer" onClick={() => router.back()}>
                     <Image
-                        alt="avatar-icon"
-                        src="/svg/avatar.svg"
-                        className="h-9 w-9"
-                        height={36}
-                        width={36}
+                        alt="chevron-left-icon"
+                        src="/svg/chevron-left.svg"
+                        height={32}
+                        width={32}
                     />
                 </div>
+                <SearchBar keyword={keyword} />
             </div>
         </div>
     );
 };
 
-export default Header;
+export default ResultHeader;
