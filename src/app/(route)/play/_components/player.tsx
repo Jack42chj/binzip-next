@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { getVideoData } from "@/app/_apis/supabase-api";
-import { TitleProps } from "@/app/_interfaces/keyword-interface";
+import { KeywordProps } from "@/app/_interfaces/keyword-interface";
 
-const Player = async ({ title }: TitleProps) => {
-    const data = await getVideoData(title);
+const Player = async ({ keyword }: KeywordProps) => {
+    const data = await getVideoData(keyword);
     const list = data[0];
 
     return (
