@@ -107,7 +107,7 @@ const TabBar = () => {
                         className={`cursor-pointer flex items-center justify-center gap-1.5 ${
                             activeTab === item.path
                                 ? "text-crimson text-[28px] border-b-4 border-crimson lg:border-b-0 lg:border-l-4 lg:border-crimson"
-                                : "text-default border-none"
+                                : "text-default border-none hover:text-crimson"
                         }`}
                     >
                         {item.src}

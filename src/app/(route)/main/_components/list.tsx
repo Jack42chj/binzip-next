@@ -1,14 +1,18 @@
-import { getViewList } from "@/app/_apis/supabase-api";
 import Image from "next/image";
+import Link from "next/link";
+import { getList } from "@/app/_apis/supabase-api";
+import { KeywordProps } from "@/app/_interfaces/keyword-interface";
 
-const ViewList = async () => {
-    const list = await getViewList();
+const List = async ({ keyword }: KeywordProps) => {
+    const list = await getList(keyword);
+
     return (
         <div className="w-full flex flex-col">
             <div className="my-4 flex gap-4">
                 {list.map((item) => (
-                    <div
+                    <Link
                         key={item.title}
+                        href={`/play/${encodeURIComponent(item.title)}`}
                         className="cursor-pointer rounded-xl flex-grow-0 flex-shrink-0 flex-basis-auto"
                     >
                         <Image
@@ -19,11 +23,11 @@ const ViewList = async () => {
                             width={173}
                             height={247}
                         />
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>
     );
 };
 
-export default ViewList;
+export default List;

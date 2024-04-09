@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getViewData } from "@/app/_apis/supabase-api";
+import { getTopData } from "@/app/_apis/supabase-api";
+import { KeywordProps } from "@/app/_interfaces/keyword-interface";
 
-const MostViewData = async () => {
-    const list = await getViewData();
+const TopData = async ({ keyword }: KeywordProps) => {
+    const list = await getTopData(keyword);
 
     return (
         <>
@@ -36,4 +37,4 @@ const MostViewData = async () => {
     );
 };
 
-export default MostViewData;
+export default TopData;

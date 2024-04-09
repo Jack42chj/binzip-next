@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import SearchBar from "./search-bar";
 import { KeywordProps } from "@/app/_interfaces/keyword-interface";
+import SearchBar from "./search-bar";
 
 const ResultHeader = ({ keyword }: KeywordProps) => {
     const router = useRouter();

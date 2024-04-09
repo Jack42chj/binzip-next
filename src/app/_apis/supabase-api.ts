@@ -3,12 +3,12 @@ import { createClient } from "../_utils/supabase";
 
 const supabase = createClient();
 
-// Main화면 인기 영상 조회
-export const getPopularList = React.cache(async () => {
+// Main화면 영상 조회
+export const getList = React.cache(async (keyword: string) => {
     const { data: list } = await supabase
         .from("binzip")
         .select(`title, img`)
-        .order("like", { ascending: false })
+        .order(keyword, { ascending: keyword === "createdAt" ? true : false })
         .limit(10);
     if (!list) {
         return [];
@@ -17,68 +17,17 @@ export const getPopularList = React.cache(async () => {
     return list;
 });
 
-// Main화면 최신 업로드 영상 조회
-export const getLatestList = React.cache(async () => {
+// 더보기 영상 조회
+export const getTopData = React.cache(async (keyword: string) => {
     const { data: list } = await supabase
         .from("binzip")
         .select(`title, img`)
-        .order("createdAt", { ascending: false })
-        .limit(10);
-    if (!list) {
-        return [];
-    }
-    return list;
-});
-
-// Main화면 조회수 높은 영상 조회
-export const getViewList = React.cache(async () => {
-    const { data: list } = await supabase
-        .from("binzip")
-        .select(`title, img`)
-        .order("view", { ascending: false })
-        .limit(10);
-    if (!list) {
-        return [];
-    }
-    return list;
-});
-
-// 인기 영상 상세 조회
-export const getPopularData = React.cache(async () => {
-    const { data: list } = await supabase
-        .from("binzip")
-        .select(`title, img`)
-        .order("like", { ascending: false })
+        .order(keyword, { ascending: keyword === "createdAt" ? true : false })
         .limit(20);
     if (!list) {
         return [];
     }
-    return list;
-});
 
-// 최신 업로드 영상 상세 조회
-export const getLatestData = React.cache(async () => {
-    const { data: list } = await supabase
-        .from("binzip")
-        .select(`title, img`)
-        .order("createdAt", { ascending: true })
-        .limit(20);
-    if (!list) {
-        return [];
-    }
-    return list;
-});
-
-// 조회수 높은 영상 상세 조회
-export const getViewData = React.cache(async () => {
-    const { data: list } = await supabase
-        .from("binzip")
-        .select(`title, img`)
-        .order("view", { ascending: false })
-        .limit(20);
-    if (!list) {
-        return [];
-    }
     return list;
 });
 

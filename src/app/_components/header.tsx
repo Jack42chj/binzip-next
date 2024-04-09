@@ -32,7 +32,7 @@ const Header = () => {
             <div className="w-full h-14 flex justify-between items-center px-5 my-2">
                 <div
                     className="cursor-pointer text-2xl font-bold text-white text-Pretendard"
-                    onClick={() => router.push("/")}
+                    onClick={() => router.push("/main")}
                 >
                     BinZip
                 </div>

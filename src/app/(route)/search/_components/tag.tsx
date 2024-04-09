@@ -18,7 +18,7 @@ const Tag = () => {
     return (
         <div className="w-full flex flex-wrap gap-4 px-5">
             {list.map((item) => (
-                <Link href={`search/${item.name}`}>
+                <Link href={`search/${item.name}`} key={item.name}>
                     <div
                         className="cursor-pointer font-Pretendard bg-grey rounded-full text-white font-bold py-3 px-4"
                         key={item.name}

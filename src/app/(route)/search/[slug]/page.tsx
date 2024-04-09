@@ -1,6 +1,6 @@
+import { Suspense } from "react";
 import Spinner from "@/app/_components/spinner";
 import TabBar from "@/app/_components/tab-bar";
-import { Suspense } from "react";
 import ResultList from "../_components/result-list";
 import ResultHeader from "../_components/result-header";
 

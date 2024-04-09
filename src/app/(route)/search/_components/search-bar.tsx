@@ -1,9 +1,9 @@
 "use client";
 
-import { KeywordProps } from "@/app/_interfaces/keyword-interface";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { KeywordProps } from "@/app/_interfaces/keyword-interface";
 
 const SearchBar = ({ keyword }: KeywordProps) => {
     const router = useRouter();

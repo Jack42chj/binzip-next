@@ -5,8 +5,3 @@ export interface KeywordProps {
 export interface TitleProps {
     title: string;
 }
-
-export interface ListProps {
-    title: string;
-    img: string;
-}

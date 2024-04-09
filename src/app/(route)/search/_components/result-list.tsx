@@ -1,7 +1,7 @@
-import { getResultData } from "@/app/_apis/supabase-api";
-import { KeywordProps } from "@/app/_interfaces/keyword-interface";
 import Image from "next/image";
 import Link from "next/link";
+import { getResultData } from "@/app/_apis/supabase-api";
+import { KeywordProps } from "@/app/_interfaces/keyword-interface";
 
 const ResultList = async ({ keyword }: KeywordProps) => {
     const list = await getResultData(keyword);
