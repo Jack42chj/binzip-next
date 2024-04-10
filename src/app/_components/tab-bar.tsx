@@ -62,7 +62,7 @@ const pathList = [
         ),
     },
     {
-        path: "/my-page",
+        path: "/mypage",
         src: (
             <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -34,11 +34,17 @@ const Header = () => {
                     className="cursor-pointer text-2xl font-bold text-white text-Pretendard"
                     onClick={() => router.push("/main")}
                 >
-                    BinZip
+                    <Image
+                        alt="logo-icon"
+                        src="/svg/logo.svg"
+                        width={114}
+                        height={36}
+                        priority
+                    />
                 </div>
                 <div
                     className="cursor-pointer"
-                    onClick={() => router.push("/my-page")}
+                    onClick={() => router.push("/mypage")}
                 >
                     <Image
                         alt="avatar-icon"
