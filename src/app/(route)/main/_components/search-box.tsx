@@ -5,7 +5,7 @@ const SearchBox = () => {
     return (
         <Link
             href="/search"
-            className="cursor-pointer max-w-xl w-full h-16 flex items-center gap-4 text-white font-Pretendard bg-secondary rounded-full mx-5 my-2.5 py-4 px-6"
+            className="cursor-pointer max-w-xl w-full h-16 flex items-center gap-4 bg-secondary rounded-full mx-5 my-2.5 py-4 px-6"
         >
             <Image
                 alt="search-icon"

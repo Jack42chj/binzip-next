@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getResultData } from "@/app/_apis/supabase-api";
+import { getCategoryData } from "@/app/_apis/supabase-api";
 import { KeywordProps } from "@/app/_interfaces/keyword-interface";
 
-const ResultList = async ({ keyword }: KeywordProps) => {
-    const list = await getResultData(keyword);
+const CategoryResult = async ({ keyword }: KeywordProps) => {
+    const list = await getCategoryData(keyword);
+
     return (
         <>
-            <div className="flex items-center m-5 gap-2 font-Pretendard">
-                <div className="text-white font-bold text-xl">전체</div>
-                <div className="text-crimson font-bold text-xl">
+            <div className="flex items-baseline m-5 gap-2">
+                <div className="text-xl font-bold">{keyword}</div>
+                <div className="text-crimson text-xl font-bold">
                     {list.length}
                 </div>
             </div>
@@ -19,7 +20,7 @@ const ResultList = async ({ keyword }: KeywordProps) => {
                         key={item.title}
                         href={`/play/${encodeURIComponent(item.title)}`}
                     >
-                        <div className="cursor-pointer">
+                        <div className="cursor-pointer mt-0">
                             <Image
                                 className="rounded-xl transition-transform duration-350 hover:scale-105"
                                 alt={item.title}
@@ -36,4 +37,4 @@ const ResultList = async ({ keyword }: KeywordProps) => {
     );
 };
 
-export default ResultList;
+export default CategoryResult;

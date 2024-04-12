@@ -15,7 +15,7 @@ const list = [
 
 const Main = () => {
     return (
-        <div className="flex flex-col items-center mb-24">
+        <div className="flex flex-col items-center mb-24 font-Pretendard text-white">
             <Header />
             <Mobile />
             <div className="w-full pt-[100vh] lg:pt-2.5 lg:pl-36">
@@ -23,12 +23,12 @@ const Main = () => {
                 {list.map((item) => (
                     <Fragment key={item.name}>
                         <div className="flex justify-between items-baseline mt-4">
-                            <div className="text-white font-bold font-Pretendard px-5 text-xl">
+                            <div className="font-bold px-5 text-xl">
                                 {item.desc}
                             </div>
                             <Link
                                 href={item.link}
-                                className="cursor-pointer text-white font-bold font-Pretendard px-5 text-sm"
+                                className="cursor-pointer font-bold px-5 text-sm"
                             >
                                 더보기
                             </Link>

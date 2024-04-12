@@ -9,7 +9,7 @@ const AuthButton = () => {
     };
     return (
         <div
-            className="cursor-pointer w-full h-14 flex justify-center items-center gap-2 text-default bg-white rounded-lg"
+            className="cursor-pointer w-full h-14 flex justify-center items-center gap-2 text-skeleton bg-white rounded-lg"
             onClick={SignInWithGoogle}
         >
             <Image

@@ -34,7 +34,7 @@ const SearchBar = ({ keyword }: KeywordProps) => {
             onSubmit={handleSubmit}
         >
             <input
-                className="cursor-pointer text-base font-Pretenda0rd w-full px-3 py-2 bg-secondary rounded-xl text-white outline-none"
+                className="cursor-pointer text-base font-Pretendard w-full px-3 py-2 bg-secondary rounded-xl text-white outline-none"
                 onChange={onChange}
                 placeholder="드라마 제목이나 장르를 검색해보세요"
                 type="text"

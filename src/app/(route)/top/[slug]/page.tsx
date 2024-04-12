@@ -18,10 +18,10 @@ const Top = ({ params }: { params: { slug: string } }) => {
     }
 
     return (
-        <div className="flex flex-col items-center mb-24">
+        <div className="flex flex-col items-center mb-24 font-Pretendard">
             <Header />
             <div className="w-full lg:pt-2 lg:pl-36">
-                <div className="text-white font-bold ml-5 text-3xl">
+                <div className="text-white font-bold ml-5 mt-5 text-2xl">
                     {title}
                 </div>
                 <Suspense fallback={<Spinner />}>

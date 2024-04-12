@@ -7,7 +7,7 @@ import ResultHeader from "../_components/result-header";
 const SearchResult = ({ params }: { params: { slug: string } }) => {
     const keyword = decodeURIComponent(params.slug);
     return (
-        <div className="flex flex-col items-center mb-24">
+        <div className="flex flex-col items-center mb-24 font-Pretendard">
             <ResultHeader keyword={keyword} />
             <div className="w-full lg:pt-2.5 lg:pl-36">
                 <Suspense fallback={<Spinner />}>

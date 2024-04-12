@@ -20,7 +20,7 @@ const Tag = () => {
             {list.map((item) => (
                 <Link href={`search/${item.name}`} key={item.name}>
                     <div
-                        className="cursor-pointer font-Pretendard bg-grey rounded-full text-white font-bold py-3 px-4"
+                        className="cursor-pointer bg-grey rounded-full font-bold py-3 px-4"
                         key={item.name}
                     >
                         {item.name}

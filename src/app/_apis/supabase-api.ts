@@ -58,6 +58,18 @@ export const getVideoData = React.cache(async (title: string) => {
     return list;
 });
 
+// 검색 카테고리 영상 결과
+export const getCategoryData = React.cache(async (keyword: string) => {
+    const { data: list } = await supabase
+        .from("binzip")
+        .select(`title, img`)
+        .or(`category.ilike.%${keyword}%`);
+    if (!list) {
+        return [];
+    }
+    return list;
+});
+
 // 로그인
 export const googleLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
