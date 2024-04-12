@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Header from "@/app/_components/header";
+import AuthButton from "./_components/auth-button";
 
 const Login = () => {
     return (
@@ -13,16 +14,8 @@ const Login = () => {
                     height={57}
                     priority
                 />
-                <div className="text-white mt-4">로그인/회원가입</div>
-                <div className="cursor-pointer w-full h-14 flex justify-center items-center gap-2 text-default bg-white rounded-lg">
-                    <Image
-                        alt="google-icon"
-                        src="/svg/google.svg"
-                        width={24}
-                        height={24}
-                    />
-                    <div>구글 로그인으로 시작하기</div>
-                </div>
+                <div className="text-white mt-4">로그인 / 회원가입</div>
+                <AuthButton />
             </div>
         </div>
     );

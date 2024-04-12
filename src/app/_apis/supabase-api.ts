@@ -57,3 +57,35 @@ export const getVideoData = React.cache(async (title: string) => {
     }
     return list;
 });
+
+// 로그인
+export const googleLogin = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+            queryParams: {
+                access_type: "offline",
+                prompt: "consent",
+            },
+            redirectTo: "http://localhost:3000",
+        },
+    });
+};
+
+// 로그아웃
+export const LogOut = async () => {
+    const { error } = await supabase.auth.signOut();
+};
+
+// 유저 정보 불러오기
+export const getUserInfo = async () => {
+    const authInfo = await supabase.auth.getSession();
+    const session = authInfo.data.session;
+    if (session)
+        return {
+            name: session.user.user_metadata.name,
+            email: session.user.user_metadata.email,
+            avatar: session.user.user_metadata.avatar_url,
+        };
+    else return null;
+};

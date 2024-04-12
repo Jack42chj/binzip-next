@@ -3,12 +3,22 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { getUserInfo } from "../_apis/supabase-api";
+import useAuthInfo from "../_stores/auth-store";
 
 const Header = () => {
+    const { setUser, userInfo } = useAuthInfo();
     const router = useRouter();
     const [scrolled, setScrolled] = useState(false);
 
+    const getUser = async () => {
+        const user = await getUserInfo();
+        if (user) setUser(user);
+        else return;
+    };
+
     useEffect(() => {
+        getUser();
         const handleScroll = () => {
             const offset = window.scrollY;
             if (offset > 0) {
@@ -46,13 +56,28 @@ const Header = () => {
                     className="cursor-pointer"
                     onClick={() => router.push("/mypage")}
                 >
-                    <Image
-                        alt="avatar-icon"
-                        src="/svg/avatar.svg"
-                        className="h-9 w-9"
-                        height={36}
-                        width={36}
-                    />
+                    {userInfo.name !== "" ? (
+                        <div className="flex items-center gap-4">
+                            <Image
+                                alt="avatar-icon"
+                                src={userInfo.avatar}
+                                className="h-9 w-9 rounded-full"
+                                height={36}
+                                width={36}
+                            />
+                            <div className="font-Pretendard font-bold text-white text-lg">
+                                {userInfo.name}
+                            </div>
+                        </div>
+                    ) : (
+                        <Image
+                            alt="avatar-icon"
+                            src="/svg/avatar.svg"
+                            className="h-9 w-9"
+                            height={36}
+                            width={36}
+                        />
+                    )}
                 </div>
             </div>
         </div>
