@@ -9,7 +9,7 @@ const Category = () => {
         <div className="flex flex-col items-center mb-24 font-Pretendard">
             <Header />
             <div className="w-full lg:pt-2.5 lg:pl-36">
-                <div className="text-crimson font-bold ml-5 mb-5 text-2xl">
+                <div className="text-crimson font-bold ml-5 mb-5 text-3xl">
                     카테고리
                 </div>
                 <Suspense fallback={<Spinner />}>

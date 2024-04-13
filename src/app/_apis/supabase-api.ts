@@ -48,7 +48,7 @@ export const getVideoData = React.cache(async (title: string) => {
     const { data: list, error } = await supabase
         .from("binzip")
         .select(
-            `title, createdAt, api, link, like, category, actor, director, description`
+            `title, createdAt, api, link, like, view, category, actor, director, description`
         )
         .eq("title", title);
     if (!list) {
@@ -100,4 +100,14 @@ export const getUserInfo = async () => {
             avatar: session.user.user_metadata.avatar_url,
         };
     else return null;
+};
+
+// 조회수 증가
+export const setView = async (title: string, count: number) => {
+    const { error } = await supabase
+        .from("binzip")
+        .update({
+            view: count + 1,
+        })
+        .eq("title", title);
 };

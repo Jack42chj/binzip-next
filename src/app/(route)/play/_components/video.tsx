@@ -1,10 +1,15 @@
 "use client";
 
+import useIncreaseView from "./view-plus";
+
 interface VideoProps {
     link: string;
+    title: string;
+    view: number;
 }
 
-const Video = ({ link }: VideoProps) => {
+const Video = ({ link, title, view }: VideoProps) => {
+    useIncreaseView({ title: title, view: view });
     return (
         <div className="relative pb-[56.25%] lg:mr-2.5">
             <div className="w-full h-full absolute">
