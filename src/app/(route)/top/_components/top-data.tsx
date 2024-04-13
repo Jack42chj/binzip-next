@@ -14,7 +14,7 @@ const TopData = async ({ keyword }: KeywordProps) => {
                     {list.length}
                 </div>
             </div>
-            <div className="w-full grid grid-cols-custom gap-2.5 px-5">
+            <div className="w-full flex flex-wrap gap-2.5 px-5">
                 {list.map((item) => (
                     <Link
                         key={item.title}

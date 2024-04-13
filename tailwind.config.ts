@@ -14,9 +14,6 @@ const config: Config = {
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
                 main: "url('/webp/bg.webp')",
             },
-            gridTemplateColumns: {
-                custom: "repeat(auto-fit, minmax(162px, 1fr))",
-            },
         },
         fontFamily: {
             Pretendard: ["Pretendard"],
