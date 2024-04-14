@@ -123,6 +123,7 @@ const appendBucket = async (title: string, userId: string) => {
     });
 };
 
+// 좋아요 카운트 증가
 const addLikeCount = async (title: string, count: number) => {
     const { error } = await supabase
         .from("binzip")
@@ -150,6 +151,7 @@ const removeBucket = async (title: string, userId: string) => {
     });
 };
 
+// 좋아요 카운트 감소
 const subLikeCount = async (title: string, count: number) => {
     const { error } = await supabase
         .from("binzip")
