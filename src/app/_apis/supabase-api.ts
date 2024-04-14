@@ -70,6 +70,75 @@ export const getCategoryData = React.cache(async (keyword: string) => {
     return list;
 });
 
+// 조회수 증가
+export const setView = async (title: string, count: number) => {
+    const { error } = await supabase
+        .from("binzip")
+        .update({
+            view: count + 1,
+        })
+        .eq("title", title);
+};
+
+// 좋아요 현재 상태 확인
+export const CheckLiked = async (title: string) => {
+    const { data } = await supabase.auth.getUser();
+    if (data.user) {
+        const userId = data.user.id;
+        const status = await findLikefromBucket(title, userId);
+        if (status === false) {
+            return true; // 좋아요 이미 누른 상태
+        } else return false; // 좋아요 안 누른 상태
+    }
+};
+
+// 좋아요를 아이디와 영상 제목으로 리스트에서 찾기
+const findLikefromBucket = async (title: string, userId: string) => {
+    const { data } = await supabase
+        .from("binzip_user")
+        .select("like_bucket")
+        .eq("id", userId);
+    if (data) {
+        const check = data[0].like_bucket.includes(title);
+        if (check === true) return false; // 좋아요 이미 누른 상태
+        else return true; // 좋아요 안 누른 상태
+    } else return true; // 좋아요 안 누른 상태
+};
+
+// 좋아요 추가
+export const AddLikeBucket = async (title: string, like: number) => {
+    const { data } = await supabase.auth.getUser();
+    if (data.user) {
+        const userId = data.user.id;
+        await appendBucket(title, userId);
+    }
+};
+
+// 리스트에 추가
+const appendBucket = async (title: string, userId: string) => {
+    const { data, error } = await supabase.rpc("append_like_bucket", {
+        title: title,
+        user_id: userId,
+    });
+};
+
+// 좋아요 삭제
+export const DeleteLikeBucket = async (title: string, like: number) => {
+    const { data } = await supabase.auth.getUser();
+    if (data.user) {
+        const userId = data.user.id;
+        await removeBucket(title, userId);
+    }
+};
+
+// 리스트에서 제거
+const removeBucket = async (title: string, userId: string) => {
+    const { data, error } = await supabase.rpc("remove_like_bucket", {
+        title: title,
+        user_id: userId,
+    });
+};
+
 // 로그인
 export const googleLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
@@ -100,14 +169,4 @@ export const getUserInfo = async () => {
             avatar: session.user.user_metadata.avatar_url,
         };
     else return null;
-};
-
-// 조회수 증가
-export const setView = async (title: string, count: number) => {
-    const { error } = await supabase
-        .from("binzip")
-        .update({
-            view: count + 1,
-        })
-        .eq("title", title);
 };

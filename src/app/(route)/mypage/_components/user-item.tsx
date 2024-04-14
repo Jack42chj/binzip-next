@@ -1,9 +1,24 @@
 import Image from "next/image";
 
 const itemList = [
-    { name: "위치 설정", src: "/svg/like.svg", path: "/map-setting" },
-    { name: "찜 관리", src: "/svg/like.svg", path: "/map-setting" },
-    { name: "리뷰 관리", src: "/svg/like.svg", path: "/map-setting" },
+    {
+        name: "찜 관리",
+        src: "/svg/plus.svg",
+        path: "/map-setting",
+        alt: "like-icon",
+    },
+    {
+        name: "시청 기록",
+        src: "/svg/tv.svg",
+        path: "/map-setting",
+        alt: "history-icon",
+    },
+    {
+        name: "의견 보내기",
+        src: "/svg/qa.svg",
+        path: "/map-setting",
+        alt: "qa-icon",
+    },
 ];
 
 const UserItem = () => {
@@ -17,7 +32,7 @@ const UserItem = () => {
                         key={item.name}
                     >
                         <Image
-                            alt="user-icon"
+                            alt={item.alt}
                             src={item.src}
                             width={28}
                             height={28}
@@ -30,14 +45,14 @@ const UserItem = () => {
                 <div className="text-white font-bold">고객 문의</div>
                 <div className="cursor-pointer flex items-center gap-4">
                     <Image
-                        alt="user-icon"
-                        src="/svg/like.svg"
+                        alt="mail-icon"
+                        src="/svg/mail.svg"
                         width={28}
                         height={28}
                     />
                     <div className="flex flex-col gap-2 text-white">
                         <div>이메일</div>
-                        <div>gildong@gmail.com</div>
+                        <div>binzip@gmail.com</div>
                     </div>
                 </div>
             </div>
