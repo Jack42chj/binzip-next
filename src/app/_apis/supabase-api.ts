@@ -106,11 +106,12 @@ const findLikefromBucket = async (title: string, userId: string) => {
 };
 
 // 좋아요 추가
-export const AddLikeBucket = async (title: string, like: number) => {
+export const addLikeBucket = async (title: string, like: number) => {
     const { data } = await supabase.auth.getUser();
     if (data.user) {
         const userId = data.user.id;
         await appendBucket(title, userId);
+        await addLikeCount(title, like);
     }
 };
 
@@ -122,12 +123,22 @@ const appendBucket = async (title: string, userId: string) => {
     });
 };
 
+const addLikeCount = async (title: string, count: number) => {
+    const { error } = await supabase
+        .from("binzip")
+        .update({
+            like: count + 1,
+        })
+        .eq("title", title);
+};
+
 // 좋아요 삭제
-export const DeleteLikeBucket = async (title: string, like: number) => {
+export const deleteLikeBucket = async (title: string, like: number) => {
     const { data } = await supabase.auth.getUser();
     if (data.user) {
         const userId = data.user.id;
         await removeBucket(title, userId);
+        await subLikeCount(title, like);
     }
 };
 
@@ -137,6 +148,15 @@ const removeBucket = async (title: string, userId: string) => {
         title: title,
         user_id: userId,
     });
+};
+
+const subLikeCount = async (title: string, count: number) => {
+    const { error } = await supabase
+        .from("binzip")
+        .update({
+            like: count - 1,
+        })
+        .eq("title", title);
 };
 
 // 로그인

@@ -1,9 +1,9 @@
 "use client";
 
 import {
-    AddLikeBucket,
+    addLikeBucket,
     CheckLiked,
-    DeleteLikeBucket,
+    deleteLikeBucket,
     getUserInfo,
 } from "@/app/_apis/supabase-api";
 import Image from "next/image";
@@ -40,11 +40,11 @@ const IconButton = ({ link, title, like, createdAt }: ButtonProps) => {
             }
         } else {
             if (liked) {
-                await DeleteLikeBucket(title, like);
+                await deleteLikeBucket(title, like);
                 alert("좋아요 취소");
                 setLikeCount((prev) => prev - 1);
             } else {
-                await AddLikeBucket(title, like);
+                await addLikeBucket(title, like);
                 alert("좋아요 성공");
                 setLikeCount((prev) => prev + 1);
             }
