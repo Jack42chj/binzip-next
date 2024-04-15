@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const itemList = [
     {
         name: "찜 관리",
         src: "/svg/plus.svg",
-        path: "/map-setting",
+        path: "/my-favorite",
         alt: "like-icon",
     },
     {
@@ -27,9 +28,10 @@ const UserItem = () => {
             <div className="flex flex-col justify-center gap-7 my-4">
                 <div className="text-white font-bold">My 메뉴</div>
                 {itemList.map((item) => (
-                    <div
+                    <Link
                         className="cursor-pointer flex items-center gap-4 text-white"
                         key={item.name}
+                        href={item.path}
                     >
                         <Image
                             alt={item.alt}
@@ -38,7 +40,7 @@ const UserItem = () => {
                             height={28}
                         />
                         {item.name}
-                    </div>
+                    </Link>
                 ))}
             </div>
             <div className="flex flex-col justify-center gap-7 mt-4">

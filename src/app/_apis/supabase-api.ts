@@ -13,7 +13,6 @@ export const getList = React.cache(async (keyword: string) => {
     if (!list) {
         return [];
     }
-
     return list;
 });
 
@@ -27,7 +26,6 @@ export const getTopData = React.cache(async (keyword: string) => {
     if (!list) {
         return [];
     }
-
     return list;
 });
 
@@ -45,14 +43,13 @@ export const getResultData = React.cache(async (keyword: string) => {
 
 // 선택한 제목의 영상 조회
 export const getVideoData = React.cache(async (title: string) => {
-    const { data: list, error } = await supabase
+    const { data: list } = await supabase
         .from("binzip")
         .select(
             `title, createdAt, api, link, like, view, category, actor, director, description`
         )
         .eq("title", title);
     if (!list) {
-        console.error(error);
         return [];
     }
     return list;
@@ -69,6 +66,47 @@ export const getCategoryData = React.cache(async (keyword: string) => {
     }
     return list;
 });
+
+// 좋아요 목록 결과
+export const getFavoriteList = async () => {
+    const { data } = await supabase.auth.getSession();
+    if (data.session) {
+        const { data } = await supabase.auth.getUser();
+        if (data.user) {
+            const userId = data.user.id;
+            return { status: 200, data: await getBucket(userId) };
+        }
+        return { status: 200, data: null };
+    } else {
+        return { status: 403, data: null };
+    }
+};
+
+// 원래 BinZip DB에서 정보 찾아오기
+const getBucket = async (userId: string) => {
+    const { data } = await supabase
+        .from("binzip_user")
+        .select("like_bucket")
+        .eq("id", userId);
+    if (!data) {
+        return [];
+    }
+    const resultPromises = data[0].like_bucket.map(async (title: string) => {
+        const { data: list, error } = await supabase
+            .from("binzip")
+            .select("title, img, actor, category, like")
+            .eq("title", title);
+
+        if (error) {
+            console.error("Error fetching binzip data:", error);
+            return null;
+        }
+
+        return list ? list[0] : null;
+    });
+    const results = await Promise.all(resultPromises);
+    return results.filter((result) => result !== null);
+};
 
 // 조회수 증가
 export const setView = async (title: string, count: number) => {
