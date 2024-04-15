@@ -4,6 +4,8 @@ import TabBar from "@/app/_components/tab-bar";
 import Spinner from "@/app/_components/spinner";
 import TopData from "../_components/top-data";
 
+export const revalidate = 0;
+
 const Top = ({ params }: { params: { slug: string } }) => {
     const keyword = decodeURIComponent(params.slug);
 

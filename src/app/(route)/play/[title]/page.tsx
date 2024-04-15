@@ -4,6 +4,8 @@ import Spinner from "@/app/_components/spinner";
 import TabBar from "@/app/_components/tab-bar";
 import Player from "../_components/player";
 
+export const revalidate = 0;
+
 const Play = ({ params }: { params: { title: string } }) => {
     const keyword = decodeURIComponent(params.title);
 

@@ -17,6 +17,8 @@ interface ButtonProps {
     createdAt: string;
 }
 
+export const revalidate = 0;
+
 const IconButton = ({ link, title, like, createdAt }: ButtonProps) => {
     const router = useRouter();
     const [liked, setLiked] = useState(false);

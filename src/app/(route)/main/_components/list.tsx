@@ -3,6 +3,8 @@ import Link from "next/link";
 import { getList } from "@/app/_apis/supabase-api";
 import { KeywordProps } from "@/app/_interfaces/keyword-interface";
 
+export const revalidate = 0;
+
 const List = async ({ keyword }: KeywordProps) => {
     const list = await getList(keyword);
 

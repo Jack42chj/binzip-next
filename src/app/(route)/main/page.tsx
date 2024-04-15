@@ -13,6 +13,8 @@ const list = [
     { desc: "조회수가 높은 영상", link: "/top/view", name: "view" },
 ];
 
+export const revalidate = 0;
+
 const Main = () => {
     return (
         <div className="flex flex-col items-center mb-24 font-Pretendard text-white">
