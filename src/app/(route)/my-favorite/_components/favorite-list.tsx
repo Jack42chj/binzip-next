@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { deleteLikeBucket, getFavoriteList } from "@/app/_apis/supabase-api";
-import Link from "next/link";
 
 interface FavoriteItem {
     title: string;

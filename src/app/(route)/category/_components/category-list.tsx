@@ -25,6 +25,7 @@ const CategoryList = () => {
                             className="rounded-xl bg-skeleton h-[240px] object-cover"
                             alt={item.name}
                             src={item.src}
+                            style={{ width: "100%", height: "auto" }}
                             width={480}
                             height={240}
                         />

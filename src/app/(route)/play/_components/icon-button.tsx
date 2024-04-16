@@ -57,7 +57,7 @@ const IconButton = ({ link, title, like, createdAt }: ButtonProps) => {
     const handleCheckLiked = async () => {
         const loginStatus = await getUserInfo();
         if (loginStatus === null) {
-            setLiked(false);
+            return;
         } else {
             const data = await CheckLiked(title);
             if (data === false) setLiked(false);
@@ -136,7 +136,6 @@ const IconButton = ({ link, title, like, createdAt }: ButtonProps) => {
                             />
                         </div>
                     )}
-
                     <div className="text-xs">찜</div>
                 </div>
             </div>

@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import TabBar from "@/app/_components/tab-bar";
+import useAuthInfo from "@/app/_stores/auth-store";
 import UserHeader from "./_components/user-header";
 import UserItem from "./_components/user-item";
-import useAuthInfo from "@/app/_stores/auth-store";
 import LogoutButton from "./_components/logout-button";
 
 const MyPage = () => {

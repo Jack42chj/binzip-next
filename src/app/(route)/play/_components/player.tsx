@@ -1,6 +1,3 @@
-import Image from "next/image";
-import { Suspense } from "react";
-import Spinner from "@/app/_components/spinner";
 import { getVideoData } from "@/app/_apis/supabase-api";
 import { KeywordProps } from "@/app/_interfaces/keyword-interface";
 import Video from "./video";

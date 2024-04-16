@@ -1,7 +1,7 @@
+import { Suspense } from "react";
 import Header from "@/app/_components/header";
 import TabBar from "@/app/_components/tab-bar";
 import FavoriteList from "./_components/favorite-list";
-import { Suspense } from "react";
 import Spinner from "@/app/_components/spinner";
 
 const MyFavorite = () => {

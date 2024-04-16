@@ -9,15 +9,9 @@ const itemList = [
         alt: "like-icon",
     },
     {
-        name: "시청 기록",
-        src: "/svg/tv.svg",
-        path: "/map-setting",
-        alt: "history-icon",
-    },
-    {
         name: "의견 보내기",
         src: "/svg/qa.svg",
-        path: "/map-setting",
+        path: "/question",
         alt: "qa-icon",
     },
 ];

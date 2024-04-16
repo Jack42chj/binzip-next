@@ -4,7 +4,7 @@ import { createClient } from "../_utils/supabase";
 const supabase = createClient();
 
 // Main화면 영상 조회
-export const getList = async (keyword: string) => {
+export const getList = React.cache(async (keyword: string) => {
     const { data: list } = await supabase
         .from("binzip")
         .select("title, img")
@@ -14,7 +14,7 @@ export const getList = async (keyword: string) => {
         return [];
     }
     return list;
-};
+});
 
 // 더보기 영상 조회
 export const getTopData = React.cache(async (keyword: string) => {
