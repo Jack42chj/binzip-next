@@ -8,9 +8,9 @@ import List from "./_components/list";
 import ListSkeleton from "./_components/list-skeleton";
 
 const list = [
-    { desc: "가장 인기있는 영상", link: "/top/like", name: "like" },
+    { desc: "가장 인기 있는 영상", link: "/top/like", name: "like" },
     { desc: "최신 업로드 영상", link: "/top/createdAt", name: "createdAt" },
-    { desc: "조회수가 높은 영상", link: "/top/view", name: "view" },
+    { desc: "조회 수가 높은 영상", link: "/top/view", name: "view" },
 ];
 
 export const revalidate = 0;

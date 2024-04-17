@@ -12,11 +12,11 @@ const Top = ({ params }: { params: { slug: string } }) => {
     let title = "영상";
 
     if (keyword === "like") {
-        title = "가장 인기있는 영상";
+        title = "가장 인기 있는 영상";
     } else if (keyword === "createdAt") {
         title = "최신 업로드 영상";
     } else if (keyword === "view") {
-        title = "조회수가 높은 영상";
+        title = "조회 수가 높은 영상";
     }
 
     return (

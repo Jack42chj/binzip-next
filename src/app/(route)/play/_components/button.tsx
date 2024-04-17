@@ -6,23 +6,15 @@ import {
     deleteLikeBucket,
     getUserInfo,
 } from "@/app/_apis/supabase-api";
+import { useMutation } from "@tanstack/react-query";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-interface ButtonProps {
-    link: string;
-    title: string;
-    like: number;
-    createdAt: string;
-}
-
-export const revalidate = 0;
-
-const IconButton = ({ link, title, like, createdAt }: ButtonProps) => {
+const Button = ({ list }: any) => {
     const router = useRouter();
     const [liked, setLiked] = useState(false);
-    const [likeCount, setLikeCount] = useState(like);
+    const [likeCount, setLikeCount] = useState(0);
 
     const onClickShare = () => {
         let currentUrl = window.document.location.href;
@@ -42,32 +34,45 @@ const IconButton = ({ link, title, like, createdAt }: ButtonProps) => {
             }
         } else {
             if (liked) {
-                await deleteLikeBucket(title, like);
-                alert("좋아요 취소");
-                setLikeCount((prev) => prev - 1);
+                deleteMutation.mutate();
             } else {
-                await addLikeBucket(title, like);
-                alert("좋아요 성공");
-                setLikeCount((prev) => prev + 1);
+                addMutation.mutate();
             }
-            handleCheckLiked();
+            setLiked((prevLiked) => !prevLiked);
         }
     };
 
+    const addMutation = useMutation({
+        mutationFn: async () => addLikeBucket(list.title, list.like),
+        onSuccess: () => {
+            setLikeCount((prev) => prev + 1);
+            alert("좋아요 성공");
+        },
+    });
+
+    const deleteMutation = useMutation({
+        mutationFn: async () => deleteLikeBucket(list.title, list.like),
+        onSuccess: () => {
+            setLikeCount((prev) => prev - 1);
+            alert("좋아요 취소");
+        },
+    });
+
     const handleCheckLiked = async () => {
         const loginStatus = await getUserInfo();
-        if (loginStatus === null) {
-            return;
-        } else {
-            const data = await CheckLiked(title);
+        if (loginStatus !== null) {
+            const data = await CheckLiked(list.title);
             if (data === false) setLiked(false);
             else setLiked(true);
         }
     };
 
     useEffect(() => {
+        if (list) {
+            setLikeCount(list.like);
+        }
         handleCheckLiked();
-    }, []);
+    }, [list]);
 
     return (
         <>
@@ -82,12 +87,12 @@ const IconButton = ({ link, title, like, createdAt }: ButtonProps) => {
                     {likeCount}
                 </div>
                 <div className="text-4xl">&#183;</div>
-                <div>{createdAt}</div>
+                <div>{list.createdAt}</div>
             </div>
             <div className="flex items-center gap-6">
                 <div
                     className="cursor-pointer flex flex-col items-center gap-2"
-                    onClick={() => window.open(link)}
+                    onClick={() => window.open(list.link)}
                 >
                     <div className="w-8 h-8 flex justify-center items-center border-solid border border-white rounded-full">
                         <Image
@@ -143,4 +148,4 @@ const IconButton = ({ link, title, like, createdAt }: ButtonProps) => {
     );
 };
 
-export default IconButton;
+export default Button;

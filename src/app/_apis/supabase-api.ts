@@ -42,7 +42,7 @@ export const getResultData = React.cache(async (keyword: string) => {
 });
 
 // 선택한 제목의 영상 조회
-export const getVideoData = React.cache(async (title: string) => {
+export const getVideoData = async (title: string) => {
     const { data: list } = await supabase
         .from("binzip")
         .select(
@@ -50,10 +50,10 @@ export const getVideoData = React.cache(async (title: string) => {
         )
         .eq("title", title);
     if (!list) {
-        return [];
+        return null;
     }
-    return list;
-});
+    return list[0];
+};
 
 // 검색 카테고리 영상 결과
 export const getCategoryData = React.cache(async (keyword: string) => {
@@ -148,8 +148,8 @@ export const addLikeBucket = async (title: string, like: number) => {
     const { data } = await supabase.auth.getUser();
     if (data.user) {
         const userId = data.user.id;
-        await appendBucket(title, userId);
-        await addLikeCount(title, like);
+        appendBucket(title, userId);
+        addLikeCount(title, like);
     }
 };
 

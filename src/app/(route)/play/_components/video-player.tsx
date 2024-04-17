@@ -1,13 +1,18 @@
+"use client";
+
+import { useQuery } from "@tanstack/react-query";
 import { getVideoData } from "@/app/_apis/supabase-api";
 import { KeywordProps } from "@/app/_interfaces/keyword-interface";
+import Spinner from "@/app/_components/spinner";
 import Video from "./video";
-import IconButton from "./icon-button";
+import Button from "./button";
 
-export const revalidate = 0;
-
-const Player = async ({ keyword }: KeywordProps) => {
-    const data = await getVideoData(keyword);
-    const list = data[0];
+const VideoPlayer = ({ keyword }: KeywordProps) => {
+    const { data: list, isLoading } = useQuery({
+        queryKey: ["play_data"],
+        queryFn: async () => getVideoData(keyword),
+    });
+    if (isLoading) return <Spinner />;
 
     return (
         list && (
@@ -15,12 +20,7 @@ const Player = async ({ keyword }: KeywordProps) => {
                 <Video link={list.api} title={list.title} view={list.view} />
                 <div className="w-full flex flex-col gap-5 p-5">
                     <div className="font-bold text-2xl">{list.title}</div>
-                    <IconButton
-                        link={list.link}
-                        title={list.title}
-                        like={list.like}
-                        createdAt={list.createdAt}
-                    />
+                    <Button list={list} />
                     <div className="leading-6">{list.description}</div>
                     <div className="flex items-center gap-2.5 text-sub">
                         <div>감독</div>
@@ -40,4 +40,4 @@ const Player = async ({ keyword }: KeywordProps) => {
     );
 };
 
-export default Player;
+export default VideoPlayer;
