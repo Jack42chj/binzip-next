@@ -36,12 +36,15 @@ $ yan dev
 
 
 ## 📚 기술 스택(Stacks)
-### 개발 환경(Environment)
+### 🛣️ 개발 환경(Environment)
 <div>
   <img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
   <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 </div>
+
+### 💫 Config
+<img src="https://img.shields.io/badge/yarn-2C8EBB?style=for-the-badge&logo=git&logoColor=white">
 
 
 ### 🛠️ 개발 기술(Development)
