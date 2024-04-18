@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BinZip
+![blog_logo](https://github.com/Jack42chj/binzip-next/assets/86552441/81dd8587-f6f0-4f97-8c4b-95f1c4da3b8c)
+유투브 국내 드라마 결말까지 몰아보기를 모아놓은 웹/앱 서비
 
-## Getting Started
+## 요구 사항(Requirement)
+- Node.js 20.11.1
+- yarn 1.22.21
 
-First, run the development server:
 
+## 실행 방법
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+$ cd binzip-next
+$ yarn
+$ yan dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 서비스 소개
+결말이 포함된 국내 드라마 요약 유투브를 모아놓은 영상 스트리밍 서비스입니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## 블로그
+<https://velog.io/@hojinch99/series/%EB%93%9C%EB%9D%BC%EB%A7%88-%EA%B2%B0%EB%A7%90-%ED%8F%AC%ED%95%A8-%EC%8A%A4%ED%8A%B8%EB%A6%AC%EB%B0%8D-%EC%84%9C%EB%B9%84%EC%8A%A4>
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 개발 기간
+2024.03.30 ~ 2024.04.20
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## 멤버 구성
+1인 기획, 디자인, 개발
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 기술 스택(Stacks)
+### 개발 환경(Environment)
+<img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+
+### 개발 기술
+<img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white">
+<img src="https://img.shields.io/badge/nextdotjs-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
+<img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white">
+<img src="https://img.shields.io/badge/reactquery-FF4154?style=for-the-badge&logo=reactquery&logoColor=white">
+<img src="https://img.shields.io/badge/supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white">
+
+- **State Management** : Zustand
+
+
+## 주요 기능
+#### 로그인/회원가입
+- Supabase Google OAuth2 로그인/회원가입
+- 회원가입 시 자동으로 회원 고유 ID값 Supabase table에 저장
+
+#### 찜
+- 로그인에 성공한 회원들에게만 제공하는 찜 서비스
+- 영상에 좋아요/찜을 눌러 찜 목록 관리
+- 찜 목록에서 바로 영상 시청 화면으로 이동 가능
+
+#### 검색 기능
+- 입력 받은 검색어를 기반으로 DB에서 결과 조회
+- 이전 검색어와 같거나 비어 있으면 검색 요청 안함
+
+#### 카테고리
+- 영상마다 카테고리를 설정하여 총 8개의 카테고리로 정리
+- 사용자에게 카테고리 별로 영상 제공
+
+#### 인기순, 조회순, 등록순 영상 제공
+- 인기순, 조회순, 등록순으로 영상들을 필터링을 하여 메인 화면에서 사용자에게 영상 추천
+
+#### 바로가기 탭
+- 메인 화면, 검색 화면, 카테고리 화면, 마이페이지 화면을 언제든지 바로 이동할 수 있는 탭
+
