@@ -44,7 +44,7 @@ $ yan dev
 </div>
 
 ### 💫 Config
-<img src="https://img.shields.io/badge/yarn-2C8EBB?style=for-the-badge&logo=git&logoColor=white">
+<img src="https://img.shields.io/badge/yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white">
 
 
 ### 🛠️ 개발 기술(Development)
