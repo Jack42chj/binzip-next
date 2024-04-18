@@ -52,9 +52,8 @@ $ yan dev
   <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white">
   <img src="https://img.shields.io/badge/reactquery-FF4154?style=for-the-badge&logo=reactquery&logoColor=white">
   <img src="https://img.shields.io/badge/supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white">
+  <img src="https://img.shields.io/badge/zustand-696969?style=for-the-badge&logo=react&logoColor=white">
 </div>
-![zustand](https://img.shields.io/badge/zustand-696969?style=for-the-badge&logo=react&logoColor=white)
-
 
 
 ### 🪄 디자인(Design)
