@@ -11,7 +11,22 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const Button = ({ list }: any) => {
+interface ButtonProps {
+    list: {
+        title: string;
+        createdAt: string;
+        api: string;
+        link: string;
+        like: number;
+        view: number;
+        category: string;
+        actor: string;
+        director: string;
+        description: string;
+    };
+}
+
+const IconButton = ({ list }: ButtonProps) => {
     const router = useRouter();
     const [liked, setLiked] = useState(false);
     const [likeCount, setLikeCount] = useState(0);
@@ -148,4 +163,4 @@ const Button = ({ list }: any) => {
     );
 };
 
-export default Button;
+export default IconButton;

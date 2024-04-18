@@ -5,7 +5,7 @@ import { getVideoData } from "@/app/_apis/supabase-api";
 import { KeywordProps } from "@/app/_interfaces/keyword-interface";
 import Spinner from "@/app/_components/spinner";
 import Video from "./video";
-import Button from "./button";
+import IconButton from "./icon-button";
 
 const VideoPlayer = ({ keyword }: KeywordProps) => {
     const { data: list, isLoading } = useQuery({
@@ -20,7 +20,7 @@ const VideoPlayer = ({ keyword }: KeywordProps) => {
                 <Video link={list.api} title={list.title} view={list.view} />
                 <div className="w-full flex flex-col gap-5 p-5">
                     <div className="font-bold text-2xl">{list.title}</div>
-                    <Button list={list} />
+                    <IconButton list={list} />
                     <div className="leading-6">{list.description}</div>
                     <div className="flex items-center gap-2.5 text-sub">
                         <div>감독</div>
