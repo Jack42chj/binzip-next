@@ -1,12 +1,13 @@
 # BinZip
-**유투브 국내 드라마 결말까지 몰아보기를 모아놓은 웹/앱 서비스**<br/>
-
+**유투브 국내 드라마 결말까지 몰아보기를 모아놓은 웹/앱 서비스**
 ![blog_logo](https://github.com/Jack42chj/binzip-next/assets/86552441/81dd8587-f6f0-4f97-8c4b-95f1c4da3b8c)
+- - -
 
 
 ## ⚙️ 요구 사항(Requirements)
 **- Node.js 20.11.1**
 **- yarn 1.22.21**
+- - -
 
 
 ## 💡 실행 방법(Installation)
@@ -15,24 +16,28 @@ $ cd binzip-next
 $ yarn
 $ yan dev
 ```
+- - -
 
 
 ## 🖥️ 서비스 소개(Introduction)
 **결말이 포함된 국내 드라마 요약 유투브를 모아놓은 영상 스트리밍 서비스입니다.**
-
 ![intro](https://github.com/Jack42chj/binzip-next/assets/86552441/5913a58f-cc77-48d6-8321-819748146454)
+- - -
 
 
 ## 📖 블로그(Blog)
 [드라마 결말 포함 스트리밍 서비스](https://velog.io/@hojinch99/series/%EB%93%9C%EB%9D%BC%EB%A7%88-%EA%B2%B0%EB%A7%90-%ED%8F%AC%ED%95%A8-%EC%8A%A4%ED%8A%B8%EB%A6%AC%EB%B0%8D-%EC%84%9C%EB%B9%84%EC%8A%A4)
+- - -
 
 
 ## 🗓️ 개발 기간(Development Period)
 **2024.03.30 ~ 2024.04.20**
+- - -
 
 
 ## 🙋‍♂️ 멤버 구성(Member)
 **1인 기획, 디자인, 개발**
+- - -
 
 
 ## 📚 기술 스택(Stacks)
@@ -61,6 +66,7 @@ $ yan dev
 
 ### 🪄 디자인(Design)
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
+- - -
 
 
 ## 🌟 주요 기능(Specification)
