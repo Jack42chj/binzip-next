@@ -65,7 +65,9 @@ $ yan dev
 
 
 ### 🪄 디자인(Design)
-<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
+<div>
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
+</div>
 - - -
 
 
