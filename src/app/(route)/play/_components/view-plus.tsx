@@ -26,3 +26,5 @@ const useIncreaseView = ({ title, view }: ViewProps) => {
 };
 
 export default useIncreaseView;
+
+//test
