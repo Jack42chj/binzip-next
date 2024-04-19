@@ -87,6 +87,7 @@ const IconButton = ({ list }: ButtonProps) => {
             setLikeCount(list.like);
         }
         handleCheckLiked();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [list]);
 
     return (

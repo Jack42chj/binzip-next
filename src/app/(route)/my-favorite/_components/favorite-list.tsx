@@ -86,7 +86,7 @@ const FavoriteList = () => {
                             priority
                         />
                         <div className="mt-4">즐겨찾는 영상이 없어요.</div>
-                        <div>좋아하는 영상을 '찜' 해보세요.</div>
+                        <div>좋아하는 영상을 &#39;찜&#39; 해보세요.</div>
                     </div>
                 ))}
             {status === 403 && (
