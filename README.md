@@ -1,16 +1,13 @@
-# BinZip
+# 유투브 국내 드라마 결말까지 몰아보기를 모아놓은 웹/앱 서비스 BinZip
 
-> **유투브 국내 드라마 결말까지 몰아보기를 모아놓은 웹/앱 서비스**
-> ![blog_logo](https://github.com/Jack42chj/binzip-next/assets/86552441/81dd8587-f6f0-4f97-8c4b-95f1c4da3b8c)
+![blog_logo](https://github.com/Jack42chj/binzip-next/assets/86552441/81dd8587-f6f0-4f97-8c4b-95f1c4da3b8c)
 
----
 
 ## ⚙️ 요구 사항(Requirements)
 
-> -   Node.js 20.11.1
-> -   yarn 1.22.21
+-   Node.js 20.11.1
+-   yarn 1.22.21
 
----
 
 ## 💡 실행 방법(Installation)
 
@@ -20,14 +17,15 @@ $ yarn
 $ yan dev
 ```
 
----
 
 ## 🖥️ 서비스 소개(Introduction)
 
-> **결말이 포함된 국내 드라마 요약 유투브를 모아놓은 영상 스트리밍 서비스입니다.**
-> ![intro](https://github.com/Jack42chj/binzip-next/assets/86552441/5913a58f-cc77-48d6-8321-819748146454)
+- 결말이 포함된 국내 드라마 요약 유투브를 모아놓은 영상 스트리밍 서비스입니다.
+- 구글 로그인을 제공하며 로그인한 사용자에게 찜 기능과 유튜브 영상 이어보기 기능을 제공합니다.
+- 유튜브 임베드 영상을 가져와 유튜브 플레이어로 영상 스트리밍을 제공합니다.
+- 검색을 통해 사용자가 원하는 영상을 검색하거나 관련 장르에 대한 검색 결과를 제공합니다.
+![sample](https://github.com/Jack42chj/binzip-next/assets/86552441/2860cd29-de59-48e7-881d-53f7da491566)
 
----
 
 ## 📖 블로그(Blog)
 
@@ -36,16 +34,16 @@ $ yan dev
 ---
 
 ## 🗓️ 개발 기간(Development Period)
+- **전체 개발 기간 : 2024.04.07 ~ 2024.04.20**
+- **기획 및 디자인 : 2024.04.07 ~ 2024.04.11**
+- **UI 및 기능 구현 : 2024.04.12 ~ 2024.04.20**
+- **DB 구현 및 데이터 수집 : 2024.04.16 ~ 2024.04.20**
 
-> **2024.04.07 ~ 2024.04.20**
-
----
 
 ## 🙋‍♂️ 멤버 구성(Member)
 
-> **1인 기획, 디자인, 개발**
+**1인 기획, 디자인, 개발**
 
----
 
 ## 📚 기술 스택(Stacks)
 
@@ -79,7 +77,126 @@ $ yan dev
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
 </div>
 
----
+
+## 📂 디렉토리 구조
+```bash
+binzip
+├─ .eslintrc.json
+├─ .gitignore
+├─ next.config.mjs
+├─ package.json
+├─ postcss.config.js
+├─ public
+│  ├─ svg
+│  │  ├─ avatar.svg
+│  │  ├─ cancle.svg
+│  │  ├─ category.svg
+│  │  ├─ chevron-left.svg
+│  │  ├─ dislike.svg
+│  │  ├─ google.svg
+│  │  ├─ like.svg
+│  │  ├─ link.svg
+│  │  ├─ logo.svg
+│  │  ├─ mail.svg
+│  │  ├─ plus.svg
+│  │  ├─ qa.svg
+│  │  ├─ rocket.svg
+│  │  ├─ search.svg
+│  │  ├─ share.svg
+│  │  └─ tv.svg
+│  └─ webp
+│     ├─ action.webp
+│     ├─ bg.webp
+│     ├─ comedy.webp
+│     ├─ crime.webp
+│     ├─ fantasy.webp
+│     ├─ history.webp
+│     ├─ mystery.webp
+│     ├─ romance.webp
+│     ├─ spinner.webp
+│     ├─ sports.webp
+│     └─ webg.webp
+├─ README.md
+├─ src
+│  └─ app
+│     ├─ (route)
+│     │  ├─ category
+│     │  │  ├─ page.tsx
+│     │  │  ├─ [slug]
+│     │  │  │  └─ page.tsx
+│     │  │  └─ _components
+│     │  │     ├─ category-list.tsx
+│     │  │     ├─ category-result.tsx
+│     │  │     └─ header.tsx
+│     │  ├─ login
+│     │  │  ├─ page.tsx
+│     │  │  └─ _components
+│     │  │     └─ auth-button.tsx
+│     │  ├─ main
+│     │  │  ├─ page.tsx
+│     │  │  └─ _components
+│     │  │     ├─ list-skeleton.tsx
+│     │  │     ├─ list.tsx
+│     │  │     ├─ mobile-bg.tsx
+│     │  │     ├─ search-box.tsx
+│     │  │     └─ web-bg.tsx
+│     │  ├─ my-favorite
+│     │  │  ├─ page.tsx
+│     │  │  └─ _components
+│     │  │     └─ favorite-list.tsx
+│     │  ├─ mypage
+│     │  │  ├─ page.tsx
+│     │  │  └─ _components
+│     │  │     ├─ logout-button.tsx
+│     │  │     ├─ user-header.tsx
+│     │  │     └─ user-item.tsx
+│     │  ├─ play
+│     │  │  ├─ [title]
+│     │  │  │  └─ page.tsx
+│     │  │  └─ _components
+│     │  │     ├─ icon-button.tsx
+│     │  │     ├─ video-player.tsx
+│     │  │     ├─ video.tsx
+│     │  │     └─ view-plus.tsx
+│     │  ├─ search
+│     │  │  ├─ page.tsx
+│     │  │  ├─ [slug]
+│     │  │  │  └─ page.tsx
+│     │  │  └─ _components
+│     │  │     ├─ header.tsx
+│     │  │     ├─ input.tsx
+│     │  │     ├─ result-header.tsx
+│     │  │     ├─ result-list.tsx
+│     │  │     ├─ search-bar.tsx
+│     │  │     └─ tag.tsx
+│     │  └─ top
+│     │     ├─ [slug]
+│     │     │  └─ page.tsx
+│     │     └─ _components
+│     │        └─ top-data.tsx
+│     ├─ globals.css
+│     ├─ icon.ico
+│     ├─ layout.tsx
+│     ├─ page.tsx
+│     ├─ _apis
+│     │  └─ supabase-api.ts
+│     ├─ _components
+│     │  ├─ header.tsx
+│     │  ├─ spinner.tsx
+│     │  └─ tab-bar.tsx
+│     ├─ _interfaces
+│     │  └─ keyword-interface.ts
+│     ├─ _query
+│     │  └─ provider.tsx
+│     ├─ _stores
+│     │  └─ auth-store.ts
+│     └─ _utils
+│        └─ supabase.ts
+├─ tailwind.config.ts
+├─ tsconfig.json
+└─ yarn.lock
+```
+
 
 ## 🌟 주요 기능(Specification)
 
