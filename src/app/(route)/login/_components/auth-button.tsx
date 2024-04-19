@@ -24,5 +24,3 @@ const AuthButton = () => {
 };
 
 export default AuthButton;
-
-//test

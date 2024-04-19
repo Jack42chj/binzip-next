@@ -63,5 +63,3 @@ const SearchBar = ({ keyword }: KeywordProps) => {
 };
 
 export default SearchBar;
-
-//test

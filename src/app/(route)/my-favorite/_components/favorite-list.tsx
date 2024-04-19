@@ -109,5 +109,3 @@ const FavoriteList = () => {
 };
 
 export default FavoriteList;
-
-//test

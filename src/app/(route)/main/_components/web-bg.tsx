@@ -26,5 +26,3 @@ const Web = () => {
 };
 
 export default Web;
-
-//test

@@ -37,5 +37,3 @@ const CategoryList = () => {
 };
 
 export default CategoryList;
-
-//test

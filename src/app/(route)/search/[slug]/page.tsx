@@ -20,5 +20,3 @@ const SearchResult = ({ params }: { params: { slug: string } }) => {
 };
 
 export default SearchResult;
-
-//test

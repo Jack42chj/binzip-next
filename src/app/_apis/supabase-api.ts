@@ -230,5 +230,3 @@ export const getUserInfo = async () => {
         };
     else return null;
 };
-
-//test

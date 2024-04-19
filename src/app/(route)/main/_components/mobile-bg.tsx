@@ -18,5 +18,3 @@ const Mobile = () => {
 };
 
 export default Mobile;
-
-//test

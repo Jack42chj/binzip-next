@@ -12,5 +12,3 @@ export default function Providers({ children }: any) {
         </QueryClientProvider>
     );
 }
-
-//test

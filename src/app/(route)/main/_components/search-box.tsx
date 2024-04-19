@@ -19,5 +19,3 @@ const SearchBox = () => {
 };
 
 export default SearchBox;
-
-//test

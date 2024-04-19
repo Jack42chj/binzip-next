@@ -37,5 +37,3 @@ const ResultList = async ({ keyword }: KeywordProps) => {
 };
 
 export default ResultList;
-
-//test

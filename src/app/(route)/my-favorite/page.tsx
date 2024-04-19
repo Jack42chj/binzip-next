@@ -22,5 +22,3 @@ const MyFavorite = () => {
 };
 
 export default MyFavorite;
-
-//test
