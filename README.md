@@ -1,4 +1,4 @@
-# 유투브 국내 드라마 결말까지 몰아보기를 모아놓은 웹/앱 서비스 BinZip
+# 🎬 국내 드라마 결말까지 몰아보기 웹/앱 서비스 BinZip
 
 ![blog_logo](https://github.com/Jack42chj/binzip-next/assets/86552441/81dd8587-f6f0-4f97-8c4b-95f1c4da3b8c)
 
