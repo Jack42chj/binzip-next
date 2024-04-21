@@ -99,7 +99,7 @@ const TabBar = () => {
 
     return (
         <div className="z-40 w-full opacity-90 fixed bottom-5 flex justify-center rounded-full lg:w-24 lg:h-full lg:bottom-0 lg:left-2.5 lg:mt-28 lg:flex-col lg:justify-center">
-            <div className="w-full h-16 bg-secondary rounded-full mx-5 flex justify-evenly lg:flex-col lg:w-24 lg:h-full lg:mt-28">
+            <div className="w-full h-16 bg-secondary rounded-full mx-5 flex justify-evenly lg:flex-col lg:w-24 lg:h-full lg:mt-24 lg:mb-8">
                 {pathList.map((item) => (
                     <div
                         onClick={() => handleTabClick(item.path)}
