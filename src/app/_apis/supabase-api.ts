@@ -208,7 +208,7 @@ export const googleLogin = async () => {
                 access_type: "offline",
                 prompt: "consent",
             },
-            redirectTo: "http://localhost:3000",
+            redirectTo: "https://binzip-next.vercel.app/main",
         },
     });
 };
