@@ -13,7 +13,13 @@ export const metadata: Metadata = {
         title: "BinZip | 유투브 국내 드라마 결말까지 몰아보자",
         description:
             "지나쳤던 드라마 몰아보자! 다양한 드라마 시작부터 결말까지 한번에!",
-        url: "http://localhost:3000",
+        url: "http://binzip.vercel.app/",
+        images: [
+            {
+                url: "/webp/og_img.webp",
+                alt: "국내 드라마 몰아보기 서비스",
+            },
+        ],
     },
 };
 
