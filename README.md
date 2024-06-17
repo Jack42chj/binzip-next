@@ -193,6 +193,12 @@ binzip
 └─ yarn.lock
 ```
 
+## ⚡ 웹 페이지 속도 측정(렌더링 속도)
+
+![image](https://github.com/Jack42chj/binzip-next/assets/86552441/72186f1f-8133-416e-8fb2-ea2969e663d9)
+
+https://tools.pingdom.com/
+
 ## 🌟 주요 기능(Specification)
 
 #### ▶️ 선택 영상 유튜브 스트리밍(Player)
