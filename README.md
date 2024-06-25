@@ -235,3 +235,25 @@ https://tools.pingdom.com/
 #### 🔗 바로가기 탭(Navigation Tab Bar)
 
 -   메인 화면, 검색 화면, 카테고리 화면, 마이페이지 화면을 언제든지 바로 이동할 수 있는 탭
+
+## 🔥 트러블 슈팅(Trouble Shooting)
+
+#### 🖌️ Styled-components(CSS-in-JS) 스타일 기법 적용
+
+문제: Next.js 13 App Router에서 Styled-components 사용이 가능하나 사용하는 모든 곳에 'use client'를 작성하는 문제가 발생했다. Next.js는 Server Components와 Client Components를 구분해서 사용한다. 이는 SSR의 장점인 Server Components를 활용한 서버 측 JS처리 및 초기 페이지 로드 속도를 향상시켜 완성된 페이지를 전달할 수 있기 때문이다. 그런데 Next.js 13 App Router에서는 Styled-components 사용을 하는 컴포넌트 최상단에 'use client'를 작성해야 한다는 것이다. 이는 'use client'가 작성된 컴포넌트는 모두 Client Component로 간주한다는 것이다. 이는 결국 Server Component를 사용하지 않은 게 되므로 SSR에 장점이 사라진다는 것이다.
+
+해결: 기존에 사용하던 Styled-components인 CSS-in-JS 기법을 포기하고 Next.js에서 추천하는 CSS 모듈 또는 Tailwind CSS와 같은 스타일 기법을 적용하는 것이다. 비록 CSS-in-JS를 사용하는 것을 포기했지만 다른 스타일 기법을 적용하면서 동시에 익힐 수 있었다.
+
+#### 💽 Next.js 13 데이터 패치 방식 변경
+
+문제: 기존에 존재했던 getServerSideProps, getStaticProps, getStaticPaths API 사용을 지원하지 않는 문제가 있었다. 기존에 있던 자료를 참고하여 프로젝트를 진행하니 새로운 Next.js 13버전에서의 데이터 패칭이 바뀌었다는 것이다.
+
+해결: 바뀐 Next.js 13버전의 데이터 패칭 방식인 fetch() 함수를 사용해 데이터 패칭 및 데이터 캐싱까지 진행하였다. 여기에 추가로 third-party 라이브러리 supabase를 사용해 데이터를 패칭하여 revalidate로 데이터 캐싱 기간을 설정하였다.
+
+https://supabase.com/blog/fetching-and-caching-supabase-data-in-next-js-server-components
+
+#### 🚨 React Query vs Fallback UI
+
+기존에 React.js로 진행한 CSR 환경에서는 주로 React Quary(Tanstack Query)를 사용해서 서버 상태를 관리하였다. 그러나 SSR 방식인 Next.js에서는 이미 서버에서 데이터 패칭을 완료하고 클라이언트에 보내주기 때문에 Suspense를 적용하여 Fallback UI로 대체한다면 React Query의 isLoading 메서드를 대체 가능하다고 생각했다.
+
+이는 프로젝트 번들 사이즈를 줄이기 위해 추가적인 React Query 라이브러리를 사용하지 않고 Suspense의 Fallback UI를 사용해 대체하였다.  당연히 React Query에서 지원하는 모든 기능을 대체할 수는 없지만 내가 필요한 부분이 추가적인 라이브러리 설치 없이 대체 가능하다면 상황에 맞춰 사용하는 것이 중요하다고 생각한다.
