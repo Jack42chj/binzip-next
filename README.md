@@ -256,4 +256,6 @@ https://supabase.com/blog/fetching-and-caching-supabase-data-in-next-js-server-c
 
 기존에 React.js로 진행한 CSR 환경에서는 주로 React Quary(Tanstack Query)를 사용해서 서버 상태를 관리하였다. 그러나 SSR 방식인 Next.js에서는 이미 서버에서 데이터 패칭을 완료하고 클라이언트에 보내주기 때문에 Suspense를 적용하여 Fallback UI로 대체한다면 React Query의 isLoading 메서드를 대체 가능하다고 생각했다.
 
-이는 프로젝트 번들 사이즈를 줄이기 위해 추가적인 React Query 라이브러리를 사용하지 않고 Suspense의 Fallback UI를 사용해 대체하였다.  당연히 React Query에서 지원하는 모든 기능을 대체할 수는 없지만 내가 필요한 부분이 추가적인 라이브러리 설치 없이 대체 가능하다면 상황에 맞춰 사용하는 것이 중요하다고 생각한다.
+그래서 이번 프로젝트 Skeleton UI 구현은 React Query 라이브러리를 사용하지 않고 Suspense의 Fallback UI를 사용해 대체하였다. 이는 당연히 React Query에서 지원하는 모든 기능을 대체할 수는 없지만 내가 필요한 부분의 추가적인 라이브러리를 사용하지 않고 React 자체에서 지원하는 Suspense 기능으로 대체 가능하다면 상황에 맞춰 사용하는 것이 중요하다고 생각한다.
+
+비록 추후에 좋아요 기능 및 조회수로 인한 데이터 변경에 따른 캐싱 기능을 사용하지 않기 위해 결국 React Query를 사용하기는 하였다.
