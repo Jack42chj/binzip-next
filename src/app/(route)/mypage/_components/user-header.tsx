@@ -7,7 +7,7 @@ const UserHeader = () => {
     const router = useRouter();
 
     return (
-        <div className="w-full bg-primary flex justify-center">
+        <div className="w-full bg-primary flex justify-center z-50">
             <div className="w-full h-16 bg-primary flex justify-start pt-2 px-5">
                 <div
                     className="cursor-pointer font-bold flex items-center"

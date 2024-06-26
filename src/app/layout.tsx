@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         url: "http://binzip.vercel.app",
         images: [
             {
-                url: "/og/og_img.png",
+                url: "/og/og-img.png",
                 alt: "국내 드라마 몰아보기 서비스",
             },
         ],
