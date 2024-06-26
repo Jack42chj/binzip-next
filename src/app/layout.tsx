@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Providers from "./_query/provider";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
     title: "BinZip | 유투브 국내 드라마 결말까지 몰아보자",
@@ -31,6 +32,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
+                <Analytics />
                 <Providers>{children}</Providers>
             </body>
         </html>
